@@ -1,6 +1,6 @@
 # STGAN (CVPR 2019)
 
-An unofficial **PyTorch**  implementation of [**STGAN: A Unified Selective Transfer Network for Arbitrary Image Attribute Editing**](https://arxiv.org/abs/1904.09709). 
+An unofficial **PyTorch**  system implementation of [**STGAN: A Unified Selective Transfer Network for Arbitrary Image Attribute Editing**](https://arxiv.org/abs/1904.09709) . 
 
 ## Requirements
 - [Python 3.6+](https://www.python.org)
@@ -10,12 +10,6 @@ An unofficial **PyTorch**  implementation of [**STGAN: A Unified Selective Trans
 - [tqdm](https://github.com/tqdm/tqdm)
 - [Pillow](https://github.com/python-pillow/Pillow)
 - [easydict](https://github.com/makinacorpus/easydict)
-
-## Sample
-
-From left to right: Origin, Bangs, Blond_Hair,  Brown_Hair, Bushy_Eyebrows, Eyeglasses, Male, Mouth_Slightly_Open, Mustache, Pale_Skin, Young.
-
-![](sample.jpg)
 
 ## Preparation
 
@@ -77,6 +71,13 @@ Please download the [CelebA](http://openaccess.thecvf.com/content_iccv_2015/pape
   - `summary_step`: iteration steps per summary operation with tensorboardX.
   - `sample_step`: iteration steps per sampling operation.
   - `checkpoint_step`: iteration steps per checkpoint saving operation.
+  
+## System Implementation
+- For quickly start, 
+
+### Demo vedio
+[![Watch the video](https://user-images.githubusercontent.com/83267883/201977102-c09faac9-9057-4ade-9468-241e813d6716.png)](https://youtu.be/dn3rsUOzlUg)
+
 
 ## Acknowledgements
 
