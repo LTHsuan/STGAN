@@ -12,7 +12,6 @@ An unofficial **PyTorch**  system implementation of [**STGAN: A Unified Selectiv
 - [easydict](https://github.com/makinacorpus/easydict)
 - [PyQt5](https://pypi.org/project/PyQt5/)
 - [matplotlib](https://matplotlib.org/)
-- 
 
 ## Preparation
 
@@ -77,6 +76,7 @@ Please download the [CelebA](http://openaccess.thecvf.com/content_iccv_2015/pape
   
 ## System Implementation
 - For quickly start, please run file `python windows.py`
+  (Please train the STGAN model first and save the checkpoint of the attribute)
 
 ### Demo vedio
 [![Watch the video](https://user-images.githubusercontent.com/83267883/201977102-c09faac9-9057-4ade-9468-241e813d6716.png)](https://youtu.be/dn3rsUOzlUg)
