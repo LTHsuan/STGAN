@@ -1,0 +1,57 @@
+# meta
+exp_name: stgan
+mode: test
+cuda: True
+ngpu: 2
+
+# data
+dataset: celeba
+data_root: CelebA\
+crop_size: 178
+image_size: 128
+
+# model
+g_conv_dim: 64
+d_conv_dim: 64
+d_fc_dim: 1024
+g_layers: 5
+d_layers: 5
+shortcut_layers: 4
+stu_kernel_size: 3
+use_stu: true
+one_more_conv: true
+attrs: [ Brown_Hair, Eyeglasses, Goatee, Pale_Skin, Rosy_Cheeks ]
+#  [ 5_o_Clock_Shadow, Arched_Eyebrows, Attractive, Bags_Under_Eyes, Bald, Bangs, Big_Lips, Big_Nose, Black_Hair, Blond_Hair,
+#         Blurry, Brown_Hair, Bushy_Eyebrows, Chubby, Double_Chin, Eyeglasses, Goatee, Gray_Hair, Heavy_Makeup, High_Cheekbones,
+#         Male, Mouth_Slightly_Open, Mustache, Narrow_Eyes, No_Beard, Oval_Face, Pale_Skin, Pointy_Nose, Receding_Hairline, Rosy_Cheeks,
+#         Sideburns, Smiling, Straight_Hair, Wavy_Hair, Wearing_Earrings, Wearing_Hat, Wearing_Lipstick, Wearing_Necklace, Wearing_Necktie, Young ]
+
+checkpoint: 150000
+
+# training
+batch_size: 1
+beta1: 0.5
+beta2: 0.999
+g_lr: 0.0002
+d_lr: 0.0002
+n_critic: 5
+thres_int: 0.5
+lambda_gp: 10
+lambda1: 1
+lambda2: 10
+lambda3: 100
+max_iters: 1000000
+lr_decay_iters: 800000
+train_num : 200599
+val_num : 200
+test_num : 1600
+
+# steps:
+summary_step: 10
+sample_step: 100
+checkpoint_step: 1000
+
+#Generate:
+image_path : test image/testfb_h.jpg
+attrs_org : [-1  ,1  ,1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1  ,1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1  ,1  ,1 ,-1 , 1 ,-1 ,-1  ,1 ,-1 ,-1  ,1 ,-1 ,-1 ,-1  ,1  ,1 ,-1 , 1 ,-1  ,1 ,-1 ,-1  ,1]
+attrs_trg:  [-1  ,1  ,1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1  ,1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1  ,1  ,1 ,-1 , 1 ,-1 ,-1  ,1 ,-1 ,-1  ,1 ,-1 ,-1 ,-1  ,1  ,1 ,-1 , 1 ,-1  ,1 ,-1 ,-1  ,1]

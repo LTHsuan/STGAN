@@ -1,0 +1,84 @@
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from GUI.start import start_MainWindow as Startpage
+from PIL import Image
+
+
+class photo_MainWindow(QMainWindow):
+    def setupUi(self):
+        self.setObjectName("MainWindow")
+        self.resize(800, 600)
+
+        self.centralwidget = QWidget()
+        self.centralwidget.setObjectName("centralwidget")
+
+        self.horizontalLayoutWidget = QWidget(self.centralwidget)
+        self.horizontalLayoutWidget.setGeometry(QRect(80, 450, 681, 80))
+        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
+        self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+
+        #Return to start page
+        self.return_page = QPushButton(self.centralwidget)
+        self.return_page.setGeometry(QRect(10, 10, 50, 50))
+        self.return_page.setObjectName("return_page")
+
+        
+        #Image load button
+        self.load_Img = QPushButton(self.horizontalLayoutWidget)
+        self.load_Img.setObjectName("load_Img")
+        self.horizontalLayout.addWidget(self.load_Img)
+        self.load_Img.clicked.connect(self.imgLoad) 
+
+        #check Image button
+        self.confirm = QPushButton(self.horizontalLayoutWidget)
+        self.confirm.setObjectName("confirm")
+        self.horizontalLayout.addWidget(self.confirm)
+
+        #show Image
+        self.imagePath = None
+        self.graphicsView = QLabel(self.centralwidget)
+        self.graphicsView.setObjectName("graphicsView")
+
+
+        self.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(self)
+        self.menubar.setGeometry(QRect(0, 0, 840, 21))
+        self.menubar.setObjectName("menubar")
+        self.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(self)
+        self.statusbar.setObjectName("statusbar")
+        self.setStatusBar(self.statusbar)
+
+        self.retranslateUi()
+        QMetaObject.connectSlotsByName(self)
+
+    def retranslateUi(self):
+        _translate = QCoreApplication.translate
+        self.setWindowTitle(_translate("MainWindow", "MainWindow"))
+
+        self.return_page.setIcon(QIcon('icon\\home.png')) 
+        self.return_page.setIconSize(QSize(50,50))
+
+        self.load_Img.setText(_translate("MainWindow", "load_Img"))
+        self.confirm.setText(_translate("MainWindow", "confirm"))
+
+    def imgLoad(self):
+        self.imagePath, _ = QFileDialog.getOpenFileName(self, 'Open file', 'test image\\')
+        pixmap = QPixmap(self.imagePath)
+        self.graphicsView.setGeometry(QRect(400-pixmap.size().width()/2, 175-pixmap.size().height()/2, 700, 400))
+        self.graphicsView.setPixmap(pixmap)
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = photo_MainWindow()
+    ui.setupUi()
+    ui.show()
+
+    sys.exit(app.exec_())
