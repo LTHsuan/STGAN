@@ -10,6 +10,9 @@ An unofficial **PyTorch**  system implementation of [**STGAN: A Unified Selectiv
 - [tqdm](https://github.com/tqdm/tqdm)
 - [Pillow](https://github.com/python-pillow/Pillow)
 - [easydict](https://github.com/makinacorpus/easydict)
+- [PyQt5](https://pypi.org/project/PyQt5/)
+- [matplotlib](https://matplotlib.org/)
+- 
 
 ## Preparation
 
@@ -73,7 +76,7 @@ Please download the [CelebA](http://openaccess.thecvf.com/content_iccv_2015/pape
   - `checkpoint_step`: iteration steps per checkpoint saving operation.
   
 ## System Implementation
-- For quickly start, 
+- For quickly start, please run file `python windows.py`
 
 ### Demo vedio
 [![Watch the video](https://user-images.githubusercontent.com/83267883/201977102-c09faac9-9057-4ade-9468-241e813d6716.png)](https://youtu.be/dn3rsUOzlUg)
